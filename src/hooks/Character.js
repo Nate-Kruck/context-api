@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { CharacterContext } from '../context/CharacterContext';
 import { getRickAndMortyPeeps } from '../services/rickAndMortyApi';
 
-export const useCharacters = () => {
+export const useCharacters = page => {
   const [characters, setCharacters] = useState([]);
   const characterType = useCharacterType();
 
@@ -11,9 +11,10 @@ export const useCharacters = () => {
   };
 
   useEffect(() => {
+    getRickAndMortyPeeps(page);
     mapBro[characterType]()
       .then(fetchedCharacters => setCharacters(fetchedCharacters)); 
-  }, [characterType]);
+  }, [page, characterType]);
 
   return characters;
 };

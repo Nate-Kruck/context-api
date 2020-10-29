@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import ListOfCharacters from '../character/characterList/CharacterList';
+import CharacterPage from '../../pages/CharacterPage';
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
         <Route
           exact
           path="/"
-          component={ListOfCharacters}
+          component={CharacterPage}
         />
       </Switch>
     </Router>

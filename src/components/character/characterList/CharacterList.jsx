@@ -1,22 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useCharacters } from '../../../hooks/Character';
 import CharacterItem from '../characterItem/CharacterItem';
 import styles from './CharacterList.css';
 
-const ListOfCharacters = () => {
-  const characters = useCharacters();
+const ListOfCharacters = ({ page }) => {
+  const characters = useCharacters(page);
 
-  const charcterElements = characters.map(character => (
+  const characterElements = characters.map(character => (
     <li key={character.id}>
       <CharacterItem {...character} />
     </li>
   ));
 
   return (
-    <ul className={styles.List}>
-      {charcterElements}
+    <ul data-testid="characters" className={styles.list}>
+      {characterElements}
     </ul>
   );
+};
+
+ListOfCharacters.propTypes = {
+  page: PropTypes.number
 };
 
 export default ListOfCharacters;

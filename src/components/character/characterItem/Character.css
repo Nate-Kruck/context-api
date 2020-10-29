@@ -1,3 +1,28 @@
-.details {
-  display: grid;
+body {
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  overflow: hidden;
+  background-color: #222;
+  background-image: linear-gradient(to right, rgba(255,255,255,.025) 10%, transparent 0), linear-gradient(#222, #000);
+  background-size: .75em 100%, 100% 100%;
+  background-attachment: fixed;
+}
+
+img {
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  grid-column: span 2;
+  max-width: 100%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transform: scale(1);
+  transition: all .25s;
+}
+
+img:hover {
+  z-index: 2;
+  transform: scale(2);
+  cursor: pointer;
 }

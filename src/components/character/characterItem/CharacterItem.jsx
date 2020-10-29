@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import styles from './Character.css';
 
 const CharacterItem = ({ name, imageUrl }) => (
-  <figure>
-    <img src={imageUrl} alt={name} />
-    <div className={styles.details}>
+  <div className={styles.details}>
+    <figure>
+      <img src={imageUrl} alt={name} />
       <figcaption>{name}</figcaption>
-    </div>
-  </figure>
+    </figure>
+  </div>
 );
 
 CharacterItem.propTypes = {
