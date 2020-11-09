@@ -4,16 +4,24 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import ListOfCharacters from '../character/characterList/CharacterList';
+import CharacterPage from '../../pages/CharacterPage';
+import Header from '../../header/Header';
+import CharacterDetailPage from '../../pages/CharacterDetailPage';
 
 export default function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route
           exact
           path="/"
-          component={ListOfCharacters}
+          component={CharacterPage}
+        />
+        <Route
+          exact
+          path="/character/:id"
+          component={CharacterDetailPage}
         />
       </Switch>
     </Router>
