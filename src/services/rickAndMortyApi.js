@@ -9,3 +9,16 @@ export const getRickAndMortyPeeps = async(page = 1) => {
     imageUrl: character.image
   }));
 };
+
+export const getRickAndMortyId = async(id) => {
+  const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+  const json = await res.json();
+
+  return {
+    id: json.id,
+    name: json.name,
+    status: json.status,
+    species: json.species,
+    imageUrl: json.image
+  };
+};
